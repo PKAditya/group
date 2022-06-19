@@ -8,7 +8,7 @@ in2 = 24
 en1 = 17
 in3 = 22
 in4 = 27
-temp1 = 1
+
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1,GPIO.OUT)
@@ -23,16 +23,16 @@ GPIO.setup(in2,GPIO.LOW)
 GPIO.setup(in3,GPIO.LOW)
 GPIO.setup(in4,GPIO.LOW)
 
-p1 = GPIO.PWM(en,1000)
-p2 = GPIO.PWM(en1,1000)
+p1 = GPIO.PWM(en,1)
+p2 = GPIO.PWM(en1,1)
 
 GPIO.output(in1,GPIO.LOW)
 GPIO.output(in2,GPIO.LOW)
 GPIO.output(in3,GPIO.LOW)
 GPIO.output(in4,GPIO.LOW)
 
-p1.start(25)
-p2.start(25)
+p1.start(100)
+p2.start(100)
 print("working")
 
 screen = curses.initscr()
@@ -203,7 +203,7 @@ try:
 					sleep(0.5)
 					back_left()
 					char17 = screen.getch()
-					if char17 == ord(''):
+					if char17 == ord(' '):
 						brake()
 						print("STOPPED")
 				if char16 == ord(' '):
@@ -225,6 +225,9 @@ try:
 				if char17 == ord(' '):
 					brake()
 					print("STOPPED")
+			if char14 == ord(' '):
+				brake()
+				print("STOPPED")
 finally:
 	curses.nocbreak();screen.keypad(0);curses.echo()
 	curses.endwin()
