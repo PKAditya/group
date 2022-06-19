@@ -1,12 +1,7 @@
 import RPi.GPIO as GPIO
 import curses
 import time
-import rospy
 from time import sleep
-from std_msgs.msg import String
-
-pub=rospy.Publisher('talker',String,queue_size=20)
-rospy.init_node('talker',anonymous=True)
 
 en = 25
 in1 = 23
