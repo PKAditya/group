@@ -141,7 +141,7 @@ try:
 				if char8 == ord(' '):
 					brake()
 					print("STOPPED")
-			if char6 == curses.kEY_LEFT:
+			if char6 == curses.KEY_LEFT:
 				brake()
 				sleep(0.5)
 				left()
