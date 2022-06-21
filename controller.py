@@ -84,7 +84,7 @@ try:
 			GPIO.output(in4,GPIO.LOW)
 		if char == ord(' '):
 			brake()
-		
+			print("STOPPED")		
 		if char == ord('q'):
 			GPIO.cleanup()
 			break
